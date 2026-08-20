@@ -13,11 +13,12 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { EngagementComponent } from './components/engagement/engagement.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MouseEffectComponent,CustomButtonComponent, HomeComponent,BoucleComponent,AboutComponent,SectionNameComponent,SkillsComponent,ExperienceComponent,PortfolioComponent,ContactComponent,FooterComponent,GalleryComponent],
+  imports: [RouterOutlet, MouseEffectComponent,CustomButtonComponent, HomeComponent,BoucleComponent,AboutComponent,SectionNameComponent,SkillsComponent,ExperienceComponent,PortfolioComponent,EngagementComponent,ContactComponent,FooterComponent,GalleryComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

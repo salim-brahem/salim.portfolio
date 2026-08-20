@@ -19,7 +19,7 @@
 }
 
 .category h3 {
-  font-size: 18px;
+  font-size: 22px;
   position: relative;
   color: var(--text-color);
   font-family: var(--font-ssfalling);
@@ -43,15 +43,15 @@
   display: flex;               /* icône + texte en ligne */
   align-items: center;         /* alignés verticalement */
   gap: 12px;                   /* espace entre icône et texte */
-  font-size: 18px;
+  font-size: 20px;
   color: var(--text-color);
   font-family: var(--font-body);
   text-align: left;            /* texte à gauche */
 }
 
 .icons img {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
 }
 
@@ -71,8 +71,12 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  justify-content: center;
+  justify-content: flex-start;
   transition: transform 0.3s ease;
+}
+
+.card > div:last-child {
+  text-align: left;
 }
 
 .card h4 {
@@ -96,6 +100,7 @@
   border-radius: 50%;
   width: 67px;
   height: 67px;
+  flex: 0 0 67px;
   display: flex;
   align-items: center;
   justify-content: center;

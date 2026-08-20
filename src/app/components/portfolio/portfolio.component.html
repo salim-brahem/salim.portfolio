@@ -43,14 +43,33 @@
       </div>
     </div>
 
-    <!-- Cas spécial : Cloud -->
-    <ng-container *ngIf="activeCategory === 'Cloud'">
+    <!-- Cas spécial : Cloud & DevOps -->
+    <ng-container *ngIf="activeCategory === 'Cloud & DevOps'">
 
       <div class="contentcloud">
 
         <div class="devices cloud">
-          <img [src]="activeProject.image" [alt]="activeProject.name" (contextmenu)="$event.preventDefault()" (click)="openLightbox(activeProject.image)"
-            draggable="false" />
+          <ng-container *ngIf="activeProject.portfolio?.length; else cloudSingleImage">
+            <div class="carousel cloud-carousel">
+              <button class="nav prev" (click)="prevImage()">
+                <i class="ri-arrow-left-fill"></i>
+              </button>
+
+              <div class="carousel-image">
+                <img (contextmenu)="$event.preventDefault()" draggable="false" [src]="activeImage"
+                  [alt]="activeProject.name" (click)="openLightbox(activeImage)" />
+              </div>
+
+              <button class="nav next" (click)="nextImage()">
+                <i class="ri-arrow-right-fill"></i>
+              </button>
+            </div>
+          </ng-container>
+
+          <ng-template #cloudSingleImage>
+            <img [src]="activeProject.image" [alt]="activeProject.name" (contextmenu)="$event.preventDefault()" (click)="openLightbox(activeProject.image)"
+              draggable="false" />
+          </ng-template>
 
           <!-- Paragraphe description en plus -->
           <p class="cloud-description">{{ activeProject.description }}</p>
@@ -69,7 +88,7 @@
     </ng-container>
 
     <!-- Cas normal (autres catégories sauf UI/UX et Cloud) -->
-    <ng-container *ngIf="activeCategory !== 'UI/UX Design & Branding' && activeCategory !== 'Cloud'">
+    <ng-container *ngIf="activeCategory !== 'UI/UX Design & Branding' && activeCategory !== 'Cloud & DevOps'">
       <div class="devices">
         <img [src]="activeProject.image" [alt]="activeProject.name" (contextmenu)="$event.preventDefault()"
           draggable="false" />
@@ -85,7 +104,7 @@
   </div>
 
   <!-- Scroll Down (masqué pour UI/UX et Cloud) -->
-  <div class="scroll-down" *ngIf="activeCategory !== 'UI/UX Design & Branding' && activeCategory !== 'Cloud'"
+  <div class="scroll-down" *ngIf="activeCategory !== 'UI/UX Design & Branding' && activeCategory !== 'Cloud & DevOps'"
     (click)="toggleDetails()">
     <i *ngIf="!showDetails" class="ri-arrow-down-fill"></i>
     <i *ngIf="showDetails" class="bi bi-x"></i>
@@ -93,7 +112,7 @@
 
   <!-- Détails projet (sauf UI/UX et Cloud) -->
   <div class="project-details"
-    *ngIf="showDetails && activeCategory !== 'UI/UX Design & Branding' && activeCategory !== 'Cloud'">
+    *ngIf="showDetails && activeCategory !== 'UI/UX Design & Branding' && activeCategory !== 'Cloud & DevOps'">
     <div class="details-container">
       <!-- Colonne gauche -->
       <div class="details-left">
@@ -102,7 +121,7 @@
         <h3><u>Stack utilisé:</u></h3>
         <ul class="stack-list">
           <li *ngFor="let tech of activeProject.stack">
-            <img [src]="'assets/icons/' + (tech.toLowerCase() === '.net' ? 'net' : tech.toLowerCase()) + '.png'"
+            <img [src]="getTechIcon(tech)"
               [alt]="tech" (contextmenu)="$event.preventDefault()" draggable="false" />
             <span>{{ tech }}</span>
           </li>

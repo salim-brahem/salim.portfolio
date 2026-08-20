@@ -22,7 +22,7 @@ padding: 0;}
 
 .personal-info h3 {
   align-items: center;
-  font-size: 22px;
+  font-size: 24px;
   margin-bottom: 25px;
   font-family: var(--font-ssfalling);
   letter-spacing: 2px;
@@ -33,7 +33,7 @@ padding: 0;}
 
 
 .personal-info p {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .personal-info a {
@@ -43,14 +43,35 @@ padding: 0;}
 
 .description {
   flex: 2;
-  max-width: 656px;
+  max-width: 760px;
+}
+
+.description h3 {
+  margin: 0 0 18px;
+  font-size: 28px;
+  font-family: var(--font-ssfalling);
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #BFDCF8 0%, #FFF2AF 62%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .description p {
-  margin-bottom: 20px;
-  line-height: 1.9;
+  margin-bottom: 12px;
+  line-height: 1.75;
   font-size: 21px;
   text-align: justify;
+}
+
+.description .closing-line {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 24px;
+  background: linear-gradient(to right, #BFDCF8 0%, #FFF2AF 62%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media (max-width: 550px) {
@@ -70,7 +91,7 @@ padding: 0;}
   }
 
   .personal-info p {
-    font-size: 17px;
+    font-size: 19px;
     margin: 0;
     margin-bottom: 6px;
     line-height: 1.8;
@@ -79,10 +100,15 @@ padding: 0;}
 
   .description p {
     margin-top: 0px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     line-height: 1.6;
     font-size: 18px;
     text-align: justify;
+  }
+
+  .description h3 {
+    font-size: 24px;
+    text-align: center;
   }
 }
 

@@ -23,7 +23,7 @@ animations: [
 
 })
 export class SkillsComponent {
-  activeSection: 'front' | 'back' | 'marketing' | null = 'front';
+  activeSection: 'fullstack' | 'cloud' | 'ai' | null = 'fullstack';
   isMobile: boolean = false;
 
   constructor() {
@@ -40,7 +40,7 @@ export class SkillsComponent {
     this.isMobile = typeof window !== 'undefined' && window.innerWidth <= 800;
   }
 
-  setActive(section: 'front' | 'back' | 'marketing') {
+  setActive(section: 'fullstack' | 'cloud' | 'ai') {
     // toggle sur mobile
     if (this.isMobile && this.activeSection === section) {
       this.activeSection = null;

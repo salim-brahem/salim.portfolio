@@ -31,6 +31,7 @@
     <li><a href="#competences" (click)="closeOverlay()">Compétences</a></li>
     <li><a href="#experience" (click)="closeOverlay()">Expérience</a></li>
     <li><a href="#portfolio" (click)="closeOverlay()">Portfolio</a></li>
+    <li><a href="#engagement" (click)="closeOverlay()">Engagement associatif</a></li>
     <li><a href="#contact" (click)="closeOverlay()">Contact</a></li>
     <li><a href="#moments" (click)="closeOverlay()">Moments</a></li>
   </ul>
@@ -43,6 +44,7 @@
         <a href="#competences">Compétences</a>
         <a href="#experience">Expérience</a>
         <a href="#portfolio">Portfolio</a>
+        <a href="#engagement">Engagement associatif</a>
         <a href="#contact">Contact</a>
        <a href="#moments">Moments</a>
 
@@ -108,9 +110,9 @@
 
    <div class="rand-container" >
 <app-section-name align="right" >
-   <span title>Expérience</span>
-  <span subtitle>Expérience</span>
-    <span subtitle1>Expérience</span>
+   <span title>Expérience professionnelle</span>
+  <span subtitle>Expérience professionnelle</span>
+    <span subtitle1>Expérience professionnelle</span>
 
 </app-section-name>
 
@@ -140,10 +142,25 @@
   </section>
 
 
+   <div class="rand-container" >
+<app-section-name align="right" >
+   <span title>Engagement associatif</span>
+  <span subtitle>Engagement associatif</span>
+    <span subtitle1>Engagement associatif</span>
+
+</app-section-name>
+  </div>
+
+
+  <section id="engagement" class="rand-container">
+<app-engagement></app-engagement>
+  </section>
+
+
 
 
     <div class="rand-container" >
-<app-section-name align="right" >
+<app-section-name align="left" >
    <span title>Contact</span>
   <span subtitle>Contact</span>
     <span subtitle1>Contact</span>
@@ -162,7 +179,7 @@
 
 
     <div class="rand-container" >
-<app-section-name align="left" >
+<app-section-name align="right" >
    <span title>Moments</span>
   <span subtitle>Moments</span>
     <span subtitle1>Moments</span>
