@@ -238,6 +238,10 @@ nav {
   }
 /* Media queries pour mobile */
 @media screen and (max-width: 768px) {
+  .rand-container {
+    margin: 0 5vw;
+  }
+
   nav {
     display: none; /* Cache le menu desktop */
   }

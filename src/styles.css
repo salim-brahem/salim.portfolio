@@ -4,7 +4,12 @@ html, body {
   box-sizing: border-box; /* optionnel mais pratique */
   background-color: var(--bg-color);
   cursor: none;
+  overflow-x: hidden;
   
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 html {
   scroll-behavior: smooth;
