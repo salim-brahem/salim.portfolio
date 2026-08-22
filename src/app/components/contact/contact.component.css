@@ -6,6 +6,7 @@
   color: #fff;
   font-family: var(--font-body, Arial, sans-serif);
   gap: 100px;
+  min-width: 0;
 }
 
 .contact-left h2 {
@@ -32,6 +33,7 @@
   margin: 0;
   font-size: 1.5rem;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .contact-right a {
@@ -104,7 +106,7 @@ app-custom-button {
 }
 
 .contact-section {
- padding: 0px 30px;
+ padding: 0;
 
 }
 

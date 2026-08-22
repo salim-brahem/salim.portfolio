@@ -15,7 +15,8 @@ img {
 }
 
 .rand-container {
-  margin: 0px 9vw; /* margin uniquement pour le contenu du composant */
+  width: min(100% - 10vw, 1570px);
+  margin: 0 auto;
 }
 #socials {
   display: none;
@@ -85,8 +86,8 @@ nav a:active::after {
 /* Styles pour le menu hamburger (mobile) */
 #overlay-button {
   position: fixed;
-  right: 2em;
-  top: 3em;
+  right: clamp(16px, 5vw, 32px);
+  top: clamp(18px, 5vw, 48px);
   padding: 26px 11px;
   z-index: 9999999;
   cursor: pointer;
@@ -153,8 +154,8 @@ input[type="checkbox"]:checked ~ #overlay-button span:after {
 
 /* Styles pour l'overlay mobile */
 #overlay {
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100%;
   background: #000; /* Remplace par une couleur assortie à ton design */
   z-index: 999999;
   visibility: hidden;
@@ -170,8 +171,10 @@ input[type="checkbox"]:checked ~ #overlay-button span:after {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  height: 100vh;
+  min-height: 100dvh;
   padding-left: 0;
+  padding-right: 0;
+  margin: 0;
   list-style-type: none;
 }
 
@@ -239,7 +242,11 @@ nav {
 /* Media queries pour mobile */
 @media screen and (max-width: 768px) {
   .rand-container {
-    margin: 0 5vw;
+    width: min(100% - 32px, 100%);
+  }
+
+  body {
+    cursor: auto !important;
   }
 
   nav {

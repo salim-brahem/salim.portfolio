@@ -17,7 +17,8 @@ padding: 0;}
 
 .personal-info {
   flex: 1;
-  width: 420px;
+  width: min(420px, 100%);
+  min-width: 0;
 }
 
 .personal-info h3 {
@@ -44,6 +45,7 @@ padding: 0;}
 .description {
   flex: 2;
   max-width: 760px;
+  min-width: 0;
 }
 
 .description h3 {
@@ -103,7 +105,7 @@ padding: 0;}
     margin-bottom: 10px;
     line-height: 1.6;
     font-size: 18px;
-    text-align: justify;
+    text-align: left;
   }
 
   .description h3 {

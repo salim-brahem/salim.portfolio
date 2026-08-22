@@ -46,7 +46,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 950px;
+    width: min(950px, 100%);
+    min-width: 0;
 }
 .fullstack h1 {
     /* tes styles ici */
@@ -79,6 +80,8 @@ body{
     flex-direction: row;
     justify-content: space-between; 
     align-items: center;
+    width: 100%;
+    min-width: 0;
 }
 
 .intro2 p {
@@ -152,7 +155,8 @@ margin-bottom: 9vw;
   .intro {
     flex-direction: column; /* passe en colonne */
     align-items: center;
-    gap: 40px;
+    gap: 28px;
+    margin-top: 72px;
   }
 #socials {
     display: none; /* cache les icônes sociales sur mobile */
@@ -175,12 +179,14 @@ margin-bottom: 9vw;
     }
 
   .fullstack h1:first-of-type {
-    font-size: 14vw;
+    font-size: clamp(2.7rem, 13vw, 6rem);
+    line-height: 1;
+    margin-bottom: 22px;
   }
 
   .fullstack h1:nth-of-type(2) {
-    font-size: 15vw;
-    line-height: 0.35;
+    font-size: clamp(2.65rem, 13vw, 6rem);
+    line-height: 0.75;
   }
 
 
@@ -205,7 +211,7 @@ margin-top: 5px;
 #photo1 {
     position: relative;
     display: block;
-    margin-top: -100px;
+    margin-top: 0;
 }
 
 }
@@ -222,21 +228,21 @@ margin-top: 5px;
 @media (max-width: 480px) { 
 
     .fullstack h1 {
-        letter-spacing: 6px;
+        letter-spacing: 3px;
     }
   .fullstack h1:first-of-type {
-    font-size: 14vw;
+    font-size: clamp(2.35rem, 12vw, 4rem);
   }
 
   .fullstack h1:nth-of-type(2) {
-    font-size: 14vw;
-    line-height: 0.35;
+    font-size: clamp(2.35rem, 12vw, 4rem);
+    line-height: 0.82;
   }
 
 
   .intro2 p {
     font-size: 16px;
-    margin-bottom: 17vw;
+    margin-bottom: 24px;
 
 
   }

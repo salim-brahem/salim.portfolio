@@ -4,12 +4,21 @@ html, body {
   box-sizing: border-box; /* optionnel mais pratique */
   background-color: var(--bg-color);
   cursor: none;
-  overflow-x: hidden;
-  
+  min-width: 0;
+  width: 100%;
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
+}
+
+body {
+  overflow-x: clip;
+}
+
+img,
+iframe {
+  max-width: 100%;
 }
 html {
   scroll-behavior: smooth;
@@ -25,7 +34,8 @@ html {
   -webkit-background-clip: text; /* clip le background au texte */
   -webkit-text-fill-color: transparent; /* rend le texte transparent pour voir le gradient */
   font-weight: bold;
-    width: fit-content;
+  width: fit-content;
+  max-width: 100%;
 
 }
 :root {
@@ -35,4 +45,11 @@ html {
   --font-ssfalling: 'SS Falling', sans-serif;
   --font-body: 'Roboto', sans-serif;
 
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    cursor: auto;
+  }
 }

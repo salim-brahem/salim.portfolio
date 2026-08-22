@@ -9,6 +9,7 @@
 /* Partie gauche */
 .left-section {
   flex: 1;
+  min-width: 0;
 }
 
 .category {
@@ -62,6 +63,7 @@
   flex-direction: column;
   gap: 15px;
   max-width: 370px;
+  min-width: 0;
 }
 
 .card {
@@ -141,13 +143,15 @@
 /* -------- MOBILE -------- */
 @media (max-width: 800px) {
   .card {
-    transform: scale(85%);   /* taille réduite */
-    transition: none;        /* pas d’animation */
+    width: 100%;
+    transform: none;
+    transition: none;
+    padding: 28px 24px;
   }
 
   .card:hover,
   .card:active {
-    transform: scale(85%);   /* reste fixe même au clic */
+    transform: none;
   }
 
   .left-section {
@@ -157,6 +161,7 @@
 
   .right-section {
     flex: 1 1 100%;
+    max-width: 100%;
     margin-bottom: 20px;
   }
 
@@ -173,6 +178,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 14px 24px;
   }
 
   .category {

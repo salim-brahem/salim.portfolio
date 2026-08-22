@@ -38,6 +38,8 @@ align-items: center;}
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+  width: 100%;
+  min-width: 0;
 }
 
 .showcase .devices img {
@@ -63,6 +65,8 @@ align-items: center;}
   padding-left: 20px;
   position: relative;
   transition: all 0.3s ease; /* 👈 fluide et rapide */
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .showcase .projects p:hover {
@@ -229,7 +233,7 @@ align-items: center;}
     align-items: center;
     text-align: center;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: visible;
   }
 
   .showcase .devices img {
@@ -241,6 +245,7 @@ align-items: center;}
     margin-top: 20px;
     width: 100%;
     justify-content: center;
+    margin-right: 0;
   }
 
   .showcase .projects p {
@@ -281,16 +286,17 @@ align-items: center;}
   }
 
   .carousel {
-    max-width: 86vw;
-    height: 320px;
+    width: 100%;
+    max-width: min(86vw, 600px);
+    height: clamp(240px, 68vw, 320px);
   }
 
   .carousel .nav.prev {
-    left: -8px;
+    left: 4px;
   }
 
   .carousel .nav.next {
-    right: -8px;
+    right: 4px;
   }
 }
 
@@ -307,11 +313,13 @@ align-items: center;}
   justify-content: space-between;
   align-items: center;
   gap: 100px;
+  min-width: 0;
 }
 
 .details-left {
   flex: 1;
   text-align: left; /* ✅ bien aligné à gauche */
+  min-width: 0;
 }
 
 
@@ -355,6 +363,7 @@ align-items: center;}
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  min-width: 0;
 
 }
 .carousel {
@@ -423,10 +432,12 @@ align-items: center;}
 @media (max-width: 1024px) {
   .details-container {
     flex-direction: column;
+    gap: 32px;
   }
 
   .details-right {
-    margin-top: -60px;
+    margin-top: 0;
+    width: 100%;
   }
 
 
@@ -529,6 +540,7 @@ align-items: center;}
   width: 100%;
   margin-left: 60px;
   margin-right: -60px;
+  min-width: 0;
 
 }
 
@@ -723,13 +735,13 @@ align-items: center;}
 
   .showcase .devices.cloud .cloud-carousel,
   .devices.cloud .cloud-carousel {
-    width: 90vw;
+    width: min(90vw, 100%);
     height: 245px;
   }
 
   .showcase .devices.cloud > img,
   .devices.cloud img {
-    width: 90vw;
+    width: min(90vw, 100%);
     height: 245px;
   }
 
